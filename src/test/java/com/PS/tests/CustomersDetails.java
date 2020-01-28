@@ -45,8 +45,8 @@ public class CustomersDetails extends Base {
 		driverInitilization(Browser);
 		custDetails = new CustomerDetails_Page();
 
-		Utility.enterText(custDetails.email, Utility.excelRead(1, 0,"CustomerDetails"));
-		Utility.enterText(custDetails.password, Utility.excelRead(1, 1, "CustomerDetails"));
+		Utility.enterText(custDetails.email, Utility.excelRead(2, 0,"CustomerDetails"));
+		Utility.enterText(custDetails.password, Utility.excelRead(2, 1, "CustomerDetails"));
 		Utility.implicitwait();
 		Utility.click(custDetails.LoginBtn);
 		Utility.implicitwait();

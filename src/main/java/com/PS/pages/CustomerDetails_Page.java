@@ -14,7 +14,7 @@ public class CustomerDetails_Page extends Base {
 	@FindBy(xpath = "//input[@placeholder='Password']")
 	public WebElement password;
 
-	@FindBy(xpath = "//button[@class='btn btn-green btn-lg btn-block']")
+	@FindBy(xpath = "//button[@type='submit']")
 	public WebElement LoginBtn;
 
 	@FindBy(xpath = "//h2[@class='text-center signup-wizard-hding ng-scope']")
