@@ -9,6 +9,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.JavascriptExecutor;
@@ -40,7 +42,13 @@ public class Utility extends Base {
 
 		return dateText;
 	}
+	public static String Date() {
+		date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		String dateText = sdf.format(date);
 
+		return dateText;
+	}
 	public static void click(WebElement element) {
 		element.click();
 	}
@@ -166,6 +174,23 @@ public class Utility extends Base {
 		return text;
 	}
 
+	public static String excelReadHssf(int row, int cell, String File) {
+		try {
+			File src = new File(System.getProperty("user.dir")+prop.getProperty(File));
+			FileInputStream fis = new FileInputStream(src);
+			HSSFWorkbook wb = new HSSFWorkbook(fis);
+			HSSFSheet sh1 = wb.getSheetAt(0);
+			text = sh1.getRow(row).getCell(cell).getStringCellValue();
+			//System.out.println(text);
+			fis.close();
+		} catch (Exception e) {
+
+			System.out.println(e.getMessage());
+
+		}
+		return text;
+	}
+	
 	public static String excelReadInt(int row, int cell, String File) {
 		try {
 			File src = new File(prop.getProperty(File));

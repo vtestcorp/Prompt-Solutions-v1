@@ -6,8 +6,8 @@
       <class name="com.PS.tests.NcustomerDetails">
         <methods>
           <include name="createReport"/>
-          <include name="CreateCustomer"/>
           <include name="tearDown"/>
+          <include name="UploadCustomer"/>
           <include name="setup"/>
           <include name="closeReport"/>
         </methods>
