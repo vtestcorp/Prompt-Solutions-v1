@@ -404,6 +404,34 @@ public class CustomerDetails_Page extends Base {
 		
 		@FindBy(xpath = "//div[@id='page-container']//tr[1]//td[2]")
 		public static WebElement getExpCustomerName;
+		
+		//cutomer search
+		@FindBy(xpath = "(//a[@class='company-name'])[1]")
+		public WebElement labelFirstCustomerName;
+		
+		@FindBy(xpath = "//input[@placeholder='Enter 3 characters customer name']")
+		public WebElement textBoxSearch;
+		
+		@FindBy(xpath = "//i[@class='anticon anticon-plus']")
+		public WebElement buttonPlus;
+		
+		@FindBy(xpath = "//a[text()='Sales Invoice']")
+		public WebElement linkSalesInvoice;
+		
+		@FindBy(xpath = "//*[text()='Standard Invoice']")
+		public WebElement headerSalesInvoice;
+		
+		@FindBy(xpath = "(//div[@class='value'])[1]")
+		public WebElement labelSelectedCustomerName;
+		
+		@FindBy(xpath = "//button[@class='ant-btn ant-btn-icon-only']//preceding-sibling::div[1]")
+		public WebElement dropDownCustomer;
+		
+		@FindBy(xpath = "(//div[@ref='eCenterContainer'])[1]//child::div[2]")
+		public WebElement textBoxRefNo;
+		
+		@FindBy(xpath = "//ul[@class='ant-select-dropdown-menu  ant-select-dropdown-menu-root ant-select-dropdown-menu-vertical']//li[1]")
+		public WebElement optionFirst;
 	
 	public CustomerDetails_Page() {
 		PageFactory.initElements(driver, this);

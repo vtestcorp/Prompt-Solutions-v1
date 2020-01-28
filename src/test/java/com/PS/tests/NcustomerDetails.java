@@ -1,4 +1,5 @@
 package com.PS.tests;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.concurrent.TimeUnit;
@@ -21,18 +22,16 @@ import com.TestNG.listener.CustomListener;
 import com.relevantcodes.extentreports.LogStatus;
 
 @Listeners(CustomListener.class)
-public class NcustomerDetails  extends Base
-{
+public class NcustomerDetails extends Base {
 	CustomerDetails_Page custDetails;
 	public String totalCustCount;
 
-	
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void CreateCustomer() throws Exception {
 		Utility.logger();
-		custDetails =new CustomerDetails_Page();
+		custDetails = new CustomerDetails_Page();
 		create_extent_test("Create customer");
-		new login().login( Utility.excelRead(2, 0,"CustomerDetails"),Utility.excelRead(2, 1, "CustomerDetails"));
+		new login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
 		Thread.sleep(4000);
 		Utility.click(custDetails.CustomersMenuBtn);
 		Thread.sleep(1000);
@@ -58,8 +57,9 @@ public class NcustomerDetails  extends Base
 		Utility.click(custDetails.paymentTerm);
 		Thread.sleep(2000);
 		custDetails.paymentTermSearch.click();
-	//	custDetails.paymentTermSearch.sendKeys( Utility.excelRead(2, 3, "CustomerDetails"));
-	//	Utility.click(custDetails.paymentTerm);
+		// custDetails.paymentTermSearch.sendKeys( Utility.excelRead(2, 3,
+		// "CustomerDetails"));
+		// Utility.click(custDetails.paymentTerm);
 //
 //		Utility.click(custDetails.customerType);
 //		Utility.enterText(custDetails.customerTypeSearch, Utility.excelRead(1, 4, "CustomerDetails"));
@@ -205,6 +205,68 @@ public class NcustomerDetails  extends Base
 //			et.log(LogStatus.FAIL, "New created customer name found", et.addScreenCapture(pass("New created customer name not found")));
 //			System.out.println("search mismatched ");
 //		}
+	}
+
+	@Test(enabled = false)
+	public void customerSearch() throws InterruptedException, IOException {
+
+		Utility.logger();
+		custDetails = new CustomerDetails_Page();
+		create_extent_test("CUSTOMER SEARCH");
+		new login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
+		Thread.sleep(4000);
+		Utility.click(custDetails.CustomersMenuBtn);
+		Thread.sleep(1000);
+		Utility.implicitwait();
+		String customerName = custDetails.labelFirstCustomerName.getText();
+		Utility.enterText(custDetails.textBoxSearch, customerName);
+		if (customerName.equals(custDetails.labelFirstCustomerName.getText())) {
+			et.log(LogStatus.PASS, "Matching customer is displayed",
+					et.addScreenCapture(pass("Matching customer is displayed")));
+		} else {
+			et.log(LogStatus.FAIL, "Matching customer is not displayed",
+					et.addScreenCapture(fail("Matching customer is not displayed")));
+		}
+
+	}
+
+	@Test()
+	public void createSalesInvoice() throws InterruptedException, IOException {
+
+		Utility.logger();
+		custDetails = new CustomerDetails_Page();
+		create_extent_test("CREATE SALES INVOICE");
+		new login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
+		Thread.sleep(4000);
+		Utility.implicitwait();
+		Utility.click(custDetails.buttonPlus);
+		Thread.sleep(1000);
+		Utility.click(custDetails.linkSalesInvoice);
+		if ("Standard Invoice".equals(custDetails.headerSalesInvoice.getText())) {
+			et.log(LogStatus.PASS, "New sales invoice page is displayed",
+					et.addScreenCapture(pass("New sales invoice page is displayed")));
+		} else {
+			et.log(LogStatus.FAIL, "New sales invoice page is not displayed",
+					et.addScreenCapture(fail("New sales invoice page is not displayed")));
+		}
+		Utility.click(custDetails.dropDownCustomer);
+		Utility.click(custDetails.optionFirst);
+		String dropDownOption = custDetails.optionFirst.getText();
+		if (dropDownOption.equals(custDetails.labelSelectedCustomerName.getText())) {
+			et.log(LogStatus.PASS, "Customer is selected in customer drop down",
+					et.addScreenCapture(pass("Customer is selected in customer drop down")));
+		} else {
+			et.log(LogStatus.FAIL, "Customer is not selected in customer drop down",
+					et.addScreenCapture(fail("Customer is not selected in customer drop down")));
+		}
+		if ("".equals(custDetails.textBoxRefNo.getText())) {
+			et.log(LogStatus.PASS, "Ref no is not reflecting on invoice",
+					et.addScreenCapture(pass("Ref no is not reflecting on invoice")));
+		} else {
+			et.log(LogStatus.FAIL, "Ref no is reflecting on invoice",
+					et.addScreenCapture(fail("Ref no is reflecting on invoice")));
+		}
+
 	}
 
 }
