@@ -34,20 +34,12 @@ public class SupplierDetails extends Base {
 		driverInitilization(Browser);
 		suppDetails = new SupplierDetails_Page();
 
-		Utility.enterText(suppDetails.email, Utility.excelRead(1, 0, "SupplierDetails"));
-		Utility.enterText(suppDetails.password, Utility.excelRead(1, 1, "SupplierDetails"));
+	/*	Utility.enterText(suppDetails.email, Utility.excelRead(2, 0, "SupplierDetails"));
+		Utility.enterText(suppDetails.password, Utility.excelRead(2, 1, "SupplierDetails"));
 		Utility.implicitwait();
 		Utility.click(suppDetails.LoginBtn);
-		Utility.implicitwait();
-		if (suppDetails.CompanySetupWizardText.isDisplayed()) {
-			System.out.println("User is logged in");
-		} else {
-			System.out.println("User is not Logged in");
+		Utility.implicitwait();*/
 		}
-		Utility.implicitwait();
-		Utility.click(suppDetails.SkipBtn);
-		Utility.implicitwait();
-	}
 
 	@Test(enabled = false)
 	public void Test() {
@@ -56,9 +48,9 @@ public class SupplierDetails extends Base {
 	}
 
 	@Test(priority=1,enabled = true)
-	public void CreateCustomer() throws Throwable {
+	public void CreateSupplier() throws Throwable {
 	//try {
-		create_extent_test("Create suppiler Details");
+	/*	create_extent_test("Create suppiler Details");
 	
 		Utility.click(suppDetails.SupplierMenuBtn);
 		Thread.sleep(1000);
@@ -230,7 +222,7 @@ public class SupplierDetails extends Base {
 			et.log(LogStatus.FAIL, "New created Supplier name found", et.addScreenCapture(pass("New created Supplier name not found")));
 			System.out.println("search mismatched ");
 		}
-	/*
+	*//*
 		// update Customer details
 		Thread.sleep(1000);
 		Utility.click(suppDetails.hamburgerbtn);
@@ -281,12 +273,12 @@ public class SupplierDetails extends Base {
 	
 		System.out.println("Passed");
 		sa.assertAll();
-		*/
+		*//*
 	//} 
 //	catch(Exception ex)
 //	{
 //		et.log(LogStatus.ERROR, ex.getMessage());
-//	}
+//	}*/
 }
 	
 
