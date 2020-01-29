@@ -163,7 +163,7 @@ public class NcustomerDetails extends Base {
 			System.out.println("search mismatched ");
 		}
 	}
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void UploadCustomer() throws Exception {
 		Utility.logger();
 		custDetails =new CustomerDetails_Page();
@@ -276,7 +276,7 @@ public class NcustomerDetails extends Base {
 
 	}
 
-	@Test()
+	@Test(enabled = false)
 	public void createSalesInvoice() throws InterruptedException, IOException {
 
 		Utility.logger();
@@ -311,6 +311,47 @@ public class NcustomerDetails extends Base {
 		} else {
 			et.log(LogStatus.FAIL, "Ref no is reflecting on invoice",
 					et.addScreenCapture(fail("Ref no is reflecting on invoice")));
+		}
+
+	}
+
+	@Test(enabled = true)
+	public void customerUpdate() throws InterruptedException, IOException {
+
+		Utility.logger();
+		custDetails = new CustomerDetails_Page();
+		create_extent_test("Customer Update");
+		new login().login(Utility.excelRead(2, 0, "CustomerDetails"), Utility.excelRead(2, 1, "CustomerDetails"));
+		Thread.sleep(4000);
+		Utility.click(custDetails.CustomersMenuBtn);
+		Thread.sleep(1000);
+		Utility.implicitwait();
+		Utility.click(custDetails.update_customer_menu_button_for_first_row);
+		Thread.sleep(2000);
+		Utility.click(custDetails.edit_cust_option);
+		Thread.sleep(2000);
+	
+		String newname=Utility.updatecompname(custDetails.companyName.getAttribute("value"));
+		custDetails.companyName.clear();
+		custDetails.companyName.sendKeys(newname);
+		Utility.JS_Scrolldown(custDetails.save);
+		Thread.sleep(2000);
+		custDetails.save.click();
+		Thread.sleep(2000);
+		custDetails.save1.click();
+		
+
+		String customerName = custDetails.labelFirstCustomerName.getText();
+		
+		
+		
+		Utility.enterText(custDetails.textBoxSearch, customerName);
+		if (customerName.equals(custDetails.labelFirstCustomerName.getText())) {
+			et.log(LogStatus.PASS, "Matching customer is displayed",
+					et.addScreenCapture(pass("Matching customer is displayed")));
+		} else {
+			et.log(LogStatus.FAIL, "Matching customer is not displayed",
+					et.addScreenCapture(fail("Matching customer is not displayed")));
 		}
 
 	}

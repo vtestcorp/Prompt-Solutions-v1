@@ -260,5 +260,14 @@ public class Utility extends Base {
 
 		}
 	}
+	public static  String updatecompname(String oldName) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		String datetext = dateFormat.format(date);
+		
+		String q = oldName.substring(0, 6);
+		String s1 = q + datetext;
+		return s1;
+	}
 
 }

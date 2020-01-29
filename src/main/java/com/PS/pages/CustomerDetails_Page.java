@@ -426,6 +426,12 @@ public class CustomerDetails_Page extends Base {
 		@FindBy(xpath = "(//a[@class='company-name'])[1]")
 		public WebElement labelFirstCustomerName;
 		
+		@FindBy(xpath="//div[@aria-rowindex='2']//button[1]")
+		public WebElement update_customer_menu_button_for_first_row;
+		
+		
+		@FindBy(xpath="//a[text()='Edit Customer']")
+		public WebElement edit_cust_option;
 		@FindBy(xpath = "//input[@placeholder='Enter 3 characters customer name']")
 		public WebElement textBoxSearch;
 		
