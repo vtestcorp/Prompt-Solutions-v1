@@ -249,6 +249,7 @@ public class NcustomerDetails extends Base {
 			et.log(LogStatus.FAIL, "New sales invoice page is not displayed",
 					et.addScreenCapture(fail("New sales invoice page is not displayed")));
 		}
+		Thread.sleep(2000);
 		Utility.click(custDetails.dropDownCustomer);
 		Utility.click(custDetails.optionFirst);
 		String dropDownOption = custDetails.optionFirst.getText();
