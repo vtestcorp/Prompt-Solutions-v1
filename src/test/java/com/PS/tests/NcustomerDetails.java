@@ -246,6 +246,7 @@ public class NcustomerDetails extends Base {
 			et.log(LogStatus.PASS, "New sales invoice page is displayed",
 					et.addScreenCapture(pass("New sales invoice page is displayed")));
 			
+			
 		} else {
 			et.log(LogStatus.FAIL, "New sales invoice page is not displayed",
 					et.addScreenCapture(fail("New sales invoice page is not displayed")));
