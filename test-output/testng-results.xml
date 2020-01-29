@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+=======
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+>>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="33114" started-at="2020-01-29T13:17:35 IST" finished-at="2020-01-29T13:18:08 IST">
+=======
+  <suite name="Default suite" duration-ms="35825" started-at="2020-01-27T18:57:06 IST" finished-at="2020-01-27T18:57:42 IST">
+>>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="33114" started-at="2020-01-29T13:17:35 IST" finished-at="2020-01-29T13:18:08 IST">
+=======
+    <test name="Default test" duration-ms="35825" started-at="2020-01-27T18:57:06 IST" finished-at="2020-01-27T18:57:42 IST">
+>>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
       <class name="com.PS.tests.NcustomerDetails">
+<<<<<<< HEAD
         <test-method status="PASS" signature="createReport()[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="createReport" is-config="true" duration-ms="183" started-at="2020-01-29T13:17:34 IST" finished-at="2020-01-29T13:17:35 IST">
+=======
+        <test-method status="PASS" signature="createReport()[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="createReport" is-config="true" duration-ms="219" started-at="2020-01-27T18:57:06 IST" finished-at="2020-01-27T18:57:06 IST">
+>>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createReport -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="setup" is-config="true" duration-ms="11420" started-at="2020-01-29T13:17:35 IST" finished-at="2020-01-29T13:17:46 IST">
+=======
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="setup" is-config="true" duration-ms="16606" started-at="2020-01-27T18:57:06 IST" finished-at="2020-01-27T18:57:22 IST">
+>>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
           <params>
             <param index="0">
               <value>
@@ -22,15 +42,28 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="customerUpdate()[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="customerUpdate" duration-ms="21330" started-at="2020-01-29T13:17:46 IST" finished-at="2020-01-29T13:18:07 IST">
+=======
+        <test-method status="PASS" signature="CreateCustomer()[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="CreateCustomer" duration-ms="18694" started-at="2020-01-27T18:57:22 IST" finished-at="2020-01-27T18:57:41 IST">
+>>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- customerUpdate -->
         <test-method status="PASS" signature="tearDown()[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-01-29T13:18:08 IST" finished-at="2020-01-29T13:18:08 IST">
+=======
+        </test-method> <!-- CreateCustomer -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-01-27T18:57:42 IST" finished-at="2020-01-27T18:57:42 IST">
+>>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="closeReport()[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="closeReport" is-config="true" duration-ms="490" started-at="2020-01-29T13:18:08 IST" finished-at="2020-01-29T13:18:08 IST">
+=======
+        <test-method status="PASS" signature="closeReport()[pri:0, instance:com.PS.tests.NcustomerDetails@34cd072c]" name="closeReport" is-config="true" duration-ms="322" started-at="2020-01-27T18:57:42 IST" finished-at="2020-01-27T18:57:42 IST">
+>>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeReport -->

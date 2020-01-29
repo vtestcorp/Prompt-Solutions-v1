@@ -1,6 +1,5 @@
 package com.PS.pages;
 
-import org.apache.commons.math3.optim.linear.Relationship;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -39,69 +38,59 @@ public class CustomerDetails_Page extends Base {
 	@FindBy(xpath = "//div[@id='select2-drop']//ul[@id='select2-results-70']")
 	public WebElement paymentTermSearchClick;
 	
-	@FindBy(xpath = "//div[text()='Select Customer Type']")
+	@FindBy(xpath = "//input[@id='s2id_autogen72']/..//b")
 	public WebElement customerType;
 	@FindBy(xpath = "//input[@id='s2id_autogen72_search']")
 	public WebElement customerTypeSearch;
 	@FindBy(xpath = "//div[@id='select2-drop']//ul[@id='select2-results-72']")
 	public WebElement customerTypeSearchClick;
 	
-	@FindBy(xpath = "//input[@placeholder='Enter Website Url']")
+	@FindBy(xpath = "//input[@name='website']")
 	public WebElement companyWebsite;
 	
-	@FindBy(xpath = "//div[text()='Select Customer Source']")
+	@FindBy(xpath = "//input[@id='s2id_autogen74']/..//b")
 	public WebElement customerSource;
 	@FindBy(xpath = "//input[@id='s2id_autogen74_search']")
 	public WebElement customerSourceSearch;
 	@FindBy(xpath = "//div[@id='select2-drop']//ul[@id='select2-results-74']")
 	public WebElement customerSourceSearchClick;
 	
-	@FindBy(xpath = "//div[text()='Select Company Rating']/parent::div")
+	@FindBy(xpath = "//input[@id='s2id_autogen76']/..//b")
 	public WebElement rateYourCompany;
 	@FindBy(xpath = "//input[@id='s2id_autogen76_search']")
 	public WebElement rateYourCompanySearch;
 	@FindBy(xpath = "//div[@id='select2-drop']//ul[@id='select2-results-76']")
 	public WebElement rateYourCompanySearchClick;
 	
-	@FindBy(xpath = "//div[text()='Select Industry']")
+	@FindBy(xpath = "//input[@id='s2id_autogen78']/..//b")
 	public WebElement Industry;
 	@FindBy(xpath = "//input[@id='s2id_autogen78_search']")
 	public WebElement IndustrySearch;
 	@FindBy(xpath = "//div[@id='select2-drop']//ul[@id='select2-results-78']")
 	public WebElement IndustrySearchClick;
 	
-	@FindBy(xpath = "//input[@placeholder='Relationship Since Date']")
-	public WebElement relationship;
-	
-	@FindBy(xpath="//a[text()='Today']/parent::span")
-	public WebElement relationship_date;
-	@FindBy(xpath = "//input[@placeholder='Street Name']")
+	@FindBy(xpath = "//input[@name='billingStreetl']")
 	public WebElement streetName;
 	
-	@FindBy(xpath = "//input[@placeholder='City']")
+	@FindBy(xpath = "//input[@name='billingCityName']")
 	public WebElement city;
 	
-	@FindBy(xpath = "//div[text()='State']/parent::div")
+	@FindBy(xpath = "//input[@name='billingStateId']")
 	public WebElement state;
-	
 	@FindBy(xpath = "(//a[@class='select2-choice'])[4]")
 	public WebElement stateName;
-	
 	@FindBy(xpath = "(//input[@class='select2-input'][@role='combobox'])[11]")
 	public WebElement stateNameSearch;
 	@FindBy(xpath = "//div[@class='select2-result-label']")
 	public WebElement stateNameSearchClick;
 	
-	@FindBy(xpath = "//input[@placeholder='Zip/Postal Code']")
+	@FindBy(xpath = "//input[@name='billingPinCode']")
 	public WebElement zipcode;
 	
-	@FindBy(xpath="(//div[text()='Select Country'])[1]")
-	public WebElement country;
-	
-	@FindBy(xpath = "//span[text()='Shipping address same as billing']/parent::label")
+	@FindBy(xpath = "//input[@type='checkbox'][@ng-model='popUp.customer.shippingAddressSameAsBilling']")
 	public WebElement sameAsBillingAddress;
 	
-	@FindBy(xpath = "(//div[text()='Contact'])[2]")
+	@FindBy(xpath = "//a[@class='ng-binding'][contains(text(),'Contact')]")
 	public WebElement contactsubmenu;
 	
 	@FindBy(xpath = "//input[@id='s2id_autogen84']/..//b")
@@ -142,11 +131,8 @@ public class CustomerDetails_Page extends Base {
 	@FindBy(xpath = "//button[contains(text(),'Capture')]")
 	public static WebElement Capture;
 
-	@FindBy(xpath = "//button[text()='Submit']")
+	@FindBy(xpath = "//button[@class='btn btn-green pull-right']")
 	public WebElement save;
-	
-	@FindBy(xpath = "(//button[text()='Submit'])[2]")
-	public WebElement save1;
 	
 	@FindBy(xpath = "//div[@class='modal-body ng-scope']")
 	public WebElement popupText;
@@ -156,16 +142,16 @@ public class CustomerDetails_Page extends Base {
 	@FindBy(xpath = "//li[starts-with(text(),'Total')]")
 	public WebElement totalCustomerCount;
 	
-	@FindBy(xpath ="//li[text()='Import Customer']")
+	@FindBy(xpath ="//a[@class='btn btn-green dropdown-toggle']")
 	public WebElement newCustomerDropdown;
 	
 	@FindBy(xpath = "//div[@id='page-container']//ul[@class='dropdown-menu']//a[1]")
 	public WebElement importCustomer;
 	
-	@FindBy(xpath = "//span[text()='Next']/parent::button")
+	@FindBy(xpath = "(//input[@type='submit'])[1]")
 	public WebElement Nextbtn;
 	
-	@FindBy(xpath = "//span[text()='Done']/parent::button")
+	@FindBy(xpath = "(//input[@value='Next'])[2]")
 	public WebElement Nextbtn2;
 	
 	@FindBy(xpath = "(//input[@value='Next'])[3]")
@@ -173,7 +159,7 @@ public class CustomerDetails_Page extends Base {
 	
 	@FindBy(xpath = "//button[contains(@class,'btn btn-green center-block')]//i")
 	public WebElement downloadTemplate;
-	@FindBy(xpath = "//input[@type='file']")
+	@FindBy(xpath = "//input[@type='file'][@name='file']")
 	public WebElement chooseFile;
 	@FindBy(xpath = "//span[contains(text(),'ImportCustomers.xls')]")
 	public WebElement FileName;
@@ -181,7 +167,7 @@ public class CustomerDetails_Page extends Base {
 	@FindBy(xpath = "//div[contains(@class,'pull-right')]//input[contains(@class,'finish btn-green btn')]")
 	public WebElement uploadCustomers;
 	
-	@FindBy(xpath = "//input[@placeholder='Enter 3 characters customer name']")
+	@FindBy(xpath = "(//input[@type='text'])[1]")
 	public WebElement searchbox;
 	
 	@FindBy(xpath = "(//div[@class='ui-grid-cell-contents ng-binding ng-scope']//a//strong)[1]")
@@ -229,9 +215,6 @@ public class CustomerDetails_Page extends Base {
 	public WebElement BillingAddressAddNew;
 	@FindBy(xpath = "//span[contains(text(),'×')]")
 	public WebElement cancelIcon;
-	
-	@FindBy(xpath = "//span[@class='ant-modal-close-x']")
-	public WebElement close;
 	
 	@FindBy(xpath = "(//input[@class='select2-focusser select2-offscreen'][@role='button'])[9]/..//b")
 	public WebElement payTerms;

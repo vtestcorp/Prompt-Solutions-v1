@@ -6,7 +6,11 @@
       <class name="com.PS.tests.NcustomerDetails">
         <methods>
           <include name="createReport"/>
+<<<<<<< HEAD
           <include name="customerUpdate"/>
+=======
+          <include name="CreateCustomer"/>
+>>>>>>> branch 'customer28Jan' of https://github.com/vtestcorp/Prompt-Solutions-v1.git
           <include name="tearDown"/>
           <include name="setup"/>
           <include name="closeReport"/>
